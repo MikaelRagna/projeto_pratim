@@ -579,8 +579,8 @@ input#img-5:checked~.nav-dots label#img-dot-5 {
     align-items: center;
   }
 
-  #selecionando{
-    margin: .2rem;
+  .selecionando{
+    margin: .4rem;
   }
   
   label {

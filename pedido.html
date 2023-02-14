@@ -101,35 +101,35 @@
         <ul class="compra__lista">
           <div class="compra__cabecalho">Tamanhos</div>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Pratinho P - R$ 7,00</label>
+            <input type="radio" name="pratoTamanho" class="selecionando" id="tamanhoP">
+            <label for="tamanhoP">Pratinho P - R$ 7,00</label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Pratinho M - R$ 12,00</label>
+            <input type="radio" name="pratoTamanho" class="selecionando" id="tamanhoM">
+            <label for="tamanhoM">Pratinho M - R$ 12,00</label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Pratinho G - R$ 15,00</label>
+            <input type="radio" name="pratoTamanho" class="selecionando" id="tamanhoG">
+            <label for="tamanhoG">Pratinho G - R$ 15,00</label>
           </li>
         </ul>
       </div>
 
       <div class="compra__caixa">
 
-        <ul class="compra__lista">
+        <ul class="compra__lista ">
           <div class="compra__cabecalho">Guarnições</div>
-          <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Arroz </label>
+          <li class="compra__item guarnicao">
+            <input type="radio" class="selecionando" name="guarnicao" id="arroz">
+            <label for="arroz">Arroz </label>
           </li>
-          <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Baião</label>
+          <li class="compra__item guarnicao">
+            <input type="radio" class="selecionando" name="guarnicao" id="baiao">
+            <label for="baiao">Baião</label>
           </li>
-          <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Arroz à grega</label>
+          <li class="compra__item guarnicao">
+            <input type="radio" class="selecionando" name="guarnicao" id="arrozAGrega">
+            <label for="arrozAGrega">Arroz à grega</label>
           </li>
         </ul>
       </div>
@@ -139,16 +139,16 @@
         <ul class="compra__lista">
           <div class="compra__cabecalho">Misturas</div>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Vatapá</label>
+            <input type="radio" class="selecionando" name="mistura" id="vatapa">
+            <label for="vatapa">Vatapá</label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Creme de galinha</label>
+            <input type="radio" class="selecionando" name="mistura" id="cremeDeGalinha">
+            <label for="cremeDeGalinha">Creme de galinha</label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Panelada</label>
+            <input type="radio" class="selecionando" name="mistura" id="panelada">
+            <label for="panelada">Panelada</label>
           </li>
       </div>
 
@@ -157,16 +157,16 @@
         <ul class="compra__lista">
           <div class="compra__cabecalho">Opcionais</div>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Salada</label>
+            <input type="radio" class="selecionando" name="opcional" id="salada">
+            <label for="salada">Salada</label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Paçoca</label>
+            <input type="radio" class="selecionando" name="opcional" id="paçoca">
+            <label for="paçoca">Paçoca</label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Vinagrete</label>
+            <input type="radio" class="selecionando" name="opcional" id="vinagrete">
+            <label for="vinagrete">Vinagrete</label>
           </li>
         </ul>
       </div>
@@ -175,20 +175,20 @@
         <ul class="compra__lista">
           <div class="compra__cabecalho">Bebidas</div>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Água </label>
+            <input type="radio" class="selecionando" name="bebida" id="agua">
+            <label for="agua">Água </label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Cajuína</label>
+            <input type="radio" class="selecionando" name="bebida" id="cajuina">
+            <label for="cajuina">Cajuína</label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Coca-Cola</label>
+            <input type="radio" class="selecionando" name="bebida" id="cocaCola">
+            <label for="cocaCola">Coca-Cola</label>
           </li>
           <li class="compra__item">
-            <input type="checkbox" id="selecionando">
-            <label for="selecionado">Suco de fruta</label>
+            <input type="radio" class="selecionando" name="bebida" id="sucoDeFruta">
+            <label for="sucoDeFruta">Suco de fruta</label>
           </li>
         </ul>
       </div>
@@ -211,7 +211,7 @@
 
   </footer>
 
-  <script src="./js/script.js"></script>
+  <script src="./pedido.js"></script>
 </body>
 
 </html>
