@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./pedido.css" />
+  <title>Menu - Flavia</title>
+</head>
+
+<body>
+  <header class="header">
+    <img src="./assets/logo.svg" alt="Logo" class="logo" />
+    <div class="dropdown">
+      <div class="menu" id="menu">
+        <img class="menu" src="./assets/menu.svg" alt="menu">
+      </div>
+      <nav class="menu-hidden">
+        <a href="./index.html">Início</a>
+        <a href="./pedido.html">Pedidos</a>
+        <a href="">Cadastro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="container__inicio">
+      <div class="test">
+        <div class="div-slider">
+          <ul class="slides-front">
+            <input type="radio" name="radio-btn" id="img-1" checked="">
+            <li class="slide-container">
+              <div class="slide">
+                <img src="./assets/img1.png">
+              </div>
+              <div class="nav">
+                <label for="img-5" class="prev">‹</label>
+                <label for="img-2" class="next">›</label>
+              </div>
+            </li>
+            <input type="radio" name="radio-btn" id="img-2">
+            <li class="slide-container">
+              <div class="slide">
+                <img src="./assets/img2.png">
+              </div>
+              <div class="nav">
+                <label for="img-1" class="prev">‹</label>
+                <label for="img-3" class="next">›</label>
+              </div>
+            </li>
+            <input type="radio" name="radio-btn" id="img-3">
+            <li class="slide-container">
+              <div class="slide">
+                <img src="./assets/img3.png">
+              </div>
+              <div class="nav">
+                <label for="img-2" class="prev">‹</label>
+                <label for="img-4" class="next">›</label>
+              </div>
+            </li>
+            <input type="radio" name="radio-btn" id="img-4">
+            <li class="slide-container">
+              <div class="slide">
+                <img src="./assets/img4.png">
+              </div>
+              <div class="nav">
+                <label for="img-3" class="prev">‹</label>
+                <label for="img-5" class="next">›</label>
+              </div>
+            </li>
+            <input type="radio" name="radio-btn" id="img-5">
+            <li class="slide-container">
+              <div class="slide">
+                <img src="./assets/img5.png">
+              </div>
+              <div class="nav">
+                <label for="img-4" class="prev">‹</label>
+                <label for="img-1" class="next">›</label>
+              </div>
+            </li>
+            <li class="nav-dots">
+              <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+              <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+              <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+              <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+              <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="compra">
+
+      <div class="compra__caixa">
+
+        <ul class="compra__lista">
+          <div class="compra__cabecalho">Tamanhos</div>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Pratinho P - R$ 7,00</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Pratinho M - R$ 12,00</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Pratinho G - R$ 15,00</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="compra__caixa">
+
+        <ul class="compra__lista">
+          <div class="compra__cabecalho">Guarnições</div>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Arroz </label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Baião</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Arroz à grega</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="compra__caixa">
+
+        <ul class="compra__lista">
+          <div class="compra__cabecalho">Misturas</div>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Vatapá</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Creme de galinha</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Panelada</label>
+          </li>
+      </div>
+
+      <div class="compra__caixa">
+
+        <ul class="compra__lista">
+          <div class="compra__cabecalho">Opcionais</div>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Salada</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Paçoca</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Vinagrete</label>
+          </li>
+        </ul>
+      </div>
+      <div class="compra__caixa">
+
+        <ul class="compra__lista">
+          <div class="compra__cabecalho">Bebidas</div>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Água </label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Cajuína</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Coca-Cola</label>
+          </li>
+          <li class="compra__item">
+            <input type="checkbox" id="selecionando">
+            <label for="selecionado">Suco de fruta</label>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section class="finalizar">
+      <button class="finalizar__botao">Finalizar compra</button>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__redes">
+      <a href="#"><img src="assets/instagram.svg" alt="Icone do instagram" class="rodape__img"></a>
+      <a href="#"><img src="assets/whatsapp.svg" alt="Icone do whatsapp" class="rodape__img"></a>
+    </div>
+
+
+    <img src="assets/selo.svg" alt="selo meu pratim" class="rodape__selo">
+
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
