@@ -96,107 +96,107 @@
 
     <section class="compra">
 
-      <div class="compra__caixa">
+      <form id="tamanho" class="compra__caixa">
 
         <ul class="compra__lista">
           <div class="compra__cabecalho">Tamanhos</div>
-          <li class="compra__item">
-            <input type="radio" name="pratoTamanho" class="selecionando" id="tamanhoP">
+          <li class="compra__item tamanhos">
+            <input type="checkbox" class="selecionando tamanho" id="tamanhoP" value=0 checked>
             <label for="tamanhoP">Pratinho P - R$ 7,00</label>
           </li>
-          <li class="compra__item">
-            <input type="radio" name="pratoTamanho" class="selecionando" id="tamanhoM">
+          <li class="compra__item tamanhos">
+            <input type="checkbox" class="selecionando tamanho" id="tamanhoM" value=1>
             <label for="tamanhoM">Pratinho M - R$ 12,00</label>
           </li>
-          <li class="compra__item">
-            <input type="radio" name="pratoTamanho" class="selecionando" id="tamanhoG">
+          <li class="compra__item tamanhos">
+            <input type="checkbox" class="selecionando tamanho" id="tamanhoG" value=2 >
             <label for="tamanhoG">Pratinho G - R$ 15,00</label>
           </li>
         </ul>
-      </div>
+      </form>
 
-      <div class="compra__caixa">
+      <form id="guarnicao" class="compra__caixa">
 
         <ul class="compra__lista ">
           <div class="compra__cabecalho">Guarnições</div>
-          <li class="compra__item guarnicao">
-            <input type="radio" class="selecionando" name="guarnicao" id="arroz">
+          <li class="compra__item guarnicoes">
+            <input type="checkbox" class="selecionando" id="arroz" value=0>
             <label for="arroz">Arroz </label>
           </li>
-          <li class="compra__item guarnicao">
-            <input type="radio" class="selecionando" name="guarnicao" id="baiao">
+          <li class="compra__item guarnicoes">
+            <input type="checkbox" class="selecionando" id="baiao" value=1>
             <label for="baiao">Baião</label>
           </li>
-          <li class="compra__item guarnicao">
-            <input type="radio" class="selecionando" name="guarnicao" id="arrozAGrega">
+          <li class="compra__item guarnicoes">
+            <input type="checkbox" class="selecionando" id="arrozAGrega" value=2>
             <label for="arrozAGrega">Arroz à grega</label>
           </li>
         </ul>
-      </div>
+      </form>
 
-      <div class="compra__caixa">
+      <form id="mistura" class="compra__caixa">
 
         <ul class="compra__lista">
           <div class="compra__cabecalho">Misturas</div>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="mistura" id="vatapa">
+          <li class="compra__item misturas">
+            <input type="checkbox" class="selecionando" id="vatapa" value=0>
             <label for="vatapa">Vatapá</label>
           </li>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="mistura" id="cremeDeGalinha">
+          <li class="compra__item misturas">
+            <input type="checkbox" class="selecionando" id="cremeDeGalinha" value=1>
             <label for="cremeDeGalinha">Creme de galinha</label>
           </li>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="mistura" id="panelada">
-            <label for="panelada">Panelada</label>
+          <li class="compra__item misturas">
+            <input type="checkbox" class="selecionando" id="carneDeSol" value=2>
+            <label for="carneDeSol">Carne de Sol</label>
           </li>
-      </div>
+        </ul>
+      </form>
 
-      <div class="compra__caixa">
+      <form id="opcional" class="compra__caixa">
 
         <ul class="compra__lista">
           <div class="compra__cabecalho">Opcionais</div>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="opcional" id="salada">
+          <li class="compra__item opcionais">
+            <input type="checkbox" class="selecionando" id="salada" value=0>
             <label for="salada">Salada</label>
           </li>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="opcional" id="paçoca">
+          <li class="compra__item opcionais">
+            <input type="checkbox" class="selecionando" id="paçoca" value=1>
             <label for="paçoca">Paçoca</label>
           </li>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="opcional" id="vinagrete">
+          <li class="compra__item opcionais">
+            <input type="checkbox" class="selecionando" id="vinagrete" value=2>
             <label for="vinagrete">Vinagrete</label>
           </li>
         </ul>
-      </div>
-      <div class="compra__caixa">
+      </form>
+      <form id="bebida" class="compra__caixa">
 
         <ul class="compra__lista">
           <div class="compra__cabecalho">Bebidas</div>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="bebida" id="agua">
+          <li class="compra__item bebidas">
+            <input type="checkbox" class="selecionando" id="agua" value=0>
             <label for="agua">Água </label>
           </li>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="bebida" id="cajuina">
+          <li class="compra__item bebidas">
+            <input type="checkbox" class="selecionando" id="cajuina" value=1>
             <label for="cajuina">Cajuína</label>
           </li>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="bebida" id="cocaCola">
+          <li class="compra__item bebidas">
+            <input type="checkbox" class="selecionando" id="cocaCola" value=2>
             <label for="cocaCola">Coca-Cola</label>
           </li>
-          <li class="compra__item">
-            <input type="radio" class="selecionando" name="bebida" id="sucoDeFruta">
+          <li class="compra__item bebidas">
+            <input type="checkbox" class="selecionando" id="sucoDeFruta" value=3>
             <label for="sucoDeFruta">Suco de fruta</label>
           </li>
         </ul>
-      </div>
-
+      </form>
     </section>
-
+    <div id="resultado" style="color: black; display: flex; flex-direction: column; text-align: center;font-weight: 700;"></div>
     <section class="finalizar">
-      <button class="finalizar__botao">Finalizar compra</button>
+      <button id="finalizar__botao">Finalizar compra</button>
     </section>
   </main>
 
