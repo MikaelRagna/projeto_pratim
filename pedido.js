@@ -33,90 +33,93 @@ let dados = {
   tamanhos: [
     { tipo: "Pratinho P", preco: 7 },
     { tipo: "Pratinho M", preco: 12 },
-    { tipo: "Pratinho G", preco: 15 }
+    { tipo: "Pratinho G", preco: 15 },
   ],
-  guarnicoes: [
-    { tipo: "Arroz" },
-    { tipo: "Baião" },
-    { tipo: "Arroz à grega" }
-  ],
+  guarnicoes: [{ tipo: "Arroz" }, { tipo: "Baião" }, { tipo: "Arroz à grega" }],
   misturas: [
     { tipo: "Vatapá" },
     { tipo: "Creme de galinha" },
-    { tipo: "Carne de Sol" }
+    { tipo: "Carne de Sol" },
   ],
-  opcionais: [
-    { tipo: "Salada" },
-    { tipo: "Batata doce" },
-    { tipo: "Paçoca" }
-  ],
+  opcionais: [{ tipo: "Salada" }, { tipo: "Batata doce" }, { tipo: "Paçoca" }],
   bebidas: [
     { tipo: "Água" },
     { tipo: "Cajuína" },
     { tipo: "Coca-Cola" },
-    { tipo: "Suco de manga" }
-  ]
-}
-
+    { tipo: "Suco de manga" },
+  ],
+};
 
 let pedido = {};
-
 let checkboxes = document.querySelectorAll(".selecionando");
+let tamanho = document.querySelectorAll(".tamanho");
+let guarnicao = document.querySelectorAll(".guarnicao");
+let mistura = document.querySelectorAll(".mistura");
+let opcional = document.querySelectorAll(".opcional");
+let bebida = document.querySelectorAll(".bebida");
 let btnPedidos = document.getElementById("finalizar__botao");
+
+//console.log(tamanho, guarnicao, mistura, opcional, bebida);
 
 function getCheckBoxArray(cssSelector) {
   let result = document.querySelectorAll(cssSelector);
   return result;
 }
 
+tamanho.forEach((e, i) => {
+  tamanho[i].addEventListener("change", (e) => {
+    if (e.target.checked) {
+      removeChecked(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`));
+      pedido["tamanhos"] = dados["tamanhos"][e.target.value];
+      console.log(pedido);
+    }
+  });
+});
+
+const removeChecked = (arr) => {
+  arr.forEach((element) => {
+    if (element.getAttribute("checked")) {
+      element.setAttribute("checked", false);
+    }
+    return;
+  });
+};
+
+// for (let checkbox of checkboxes) {
+//   checkbox.addEventListener("change", (e) => {
+//     if (e.target.checked) {
+//       removeChecked(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`))
+//       pedido["tamanhos"] = dados["tamanhos"][e.target.value];
+//       console.log(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`));
+//     }
+//     if(e.target.checked)
+//     {
+//       pedido["guarnicoes"] = dados["guarnicoes"][e.target.value];
+//       console.log(pedido);
+//     }
+//     if(e.target.checked)
+//     {
+//       pedido["misturas"] = dados["misturas"][e.target.value];
+//       console.log(pedido);
+//     }
+//     if(e.target.checked)
+//     {
+//       pedido["opcionais"] = dados["opcionais"][e.target.value];
+//       console.log(pedido);
+//     }
+//     if(e.target.checked)
+//     {
+//       pedido["bebidas"] = dados["bebidas"][e.target.value];
+//       console.log(pedido);
+//     }
+//   })
+// }
 btnPedidos.onclick = () => {
   let escreva = `
   <p>Tamanho Selecionado: ${pedido.tamanhos.tipo}</p> 
   <p>Guarnição Selecionado: ${pedido.guarnicoes.tipo}</p>
   <p>Mistura Selecionada: ${pedido.misturas.tipo}</p>
   <p>Opcional Selecionado: ${pedido.opcionais.tipo}</p>
-  <p>Bebida Selecionada: ${pedido.bebidas.tipo}</p>`
-  document.getElementById("resultado").innerHTML = escreva
-}
-
-const removeChecked = (arr) => {
-  arr.forEach(element => {
-    if (element.getAttribute("checked")) {
-      element.setAttribute("checked", false);
-      
-    }
-    return
-  });
-}
-
-for (let checkbox of checkboxes) {
-  checkbox.addEventListener("change", (e) => {
-    if (e.target.checked) {
-      removeChecked(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`))
-      pedido["tamanhos"] = dados["tamanhos"][e.target.value];
-      
-    }
-    // if(e.target.checked)
-    // {
-    //   pedido["guarnicoes"] = dados["guarnicoes"][e.target.value];
-    //   console.log(pedido);
-    // }
-    // if(e.target.checked)
-    // {
-    //   pedido["misturas"] = dados["misturas"][e.target.value];
-    //   console.log(pedido);
-    // }
-    // if(e.target.checked)
-    // {
-    //   pedido["opcionais"] = dados["opcionais"][e.target.value];
-    //   console.log(pedido);
-    // }
-    // if(e.target.checked)
-    // {
-    //   pedido["bebidas"] = dados["bebidas"][e.target.value];
-    //   console.log(pedido);
-    // }
-  })
-}
-
-
+  <p>Bebida Selecionada: ${pedido.bebidas.tipo}</p>`;
+  document.getElementById("resultado").innerHTML = escreva;
+};
