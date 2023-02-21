@@ -10,7 +10,7 @@ let dados = {
     { tipo: "Creme de galinha" },
     { tipo: "Carne de Sol" },
   ],
-  opcionais: [{ tipo: "Salada" }, { tipo: "Batata doce" }, { tipo: "Paçoca" }],
+  opcionais: [{ tipo: "Salada" }, { tipo: "Paçoca" }, { tipo: "Vinagrete" }],
   bebidas: [
     { tipo: "Água" },
     { tipo: "Cajuína" },
@@ -19,7 +19,7 @@ let dados = {
   ],
 };
 
-let pedido = {};
+let pedido = [];
 let checkboxes = document.querySelectorAll(".selecionando");
 let tamanho = document.querySelectorAll(".tamanho");
 let guarnicao = document.querySelectorAll(".guarnicao");
@@ -28,28 +28,23 @@ let opcional = document.querySelectorAll(".opcional");
 let bebida = document.querySelectorAll(".bebida");
 let btnPedidos = document.getElementById("finalizar__botao");
 
-
-// function getCheckBoxArray(cssSelector) {
-//   let result = document.querySelectorAll(cssSelector);
-//   return result;
-// }
-
-// const removeChecked = (arr) => {
-//   arr.forEach((element) => {
-//     if (element.getAttribute("checked")) {
-//       element.setAttribute("checked", false);
-//     }
-//     return;
-//   });
-// };
-
-
-
 tamanho.forEach((_, i) => {
   tamanho[i].addEventListener("change", (e) => {
     if (e.target.checked) {
-      //removeChecked(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`));
       pedido["tamanhos"] = dados["tamanhos"][e.target.value];
+      if (pedido.tamanhos.tipo === "Pratinho P") {
+        swal("pode adicionar uma mistura");
+        console.log("pode adicionar uma mistura");
+        return pedido.tamanhos.tipo;
+      }
+      if (pedido.tamanhos.tipo === "Pratinho M") {
+        swal("pode adicionar até duas misturas");
+        console.log("pode adicionar até duas misturas");
+      }
+      if (pedido.tamanhos.tipo === "Pratinho G") {
+        swal("pode adicionar até três misturas");
+        console.log("pode adicionar até três misturas");
+      }
       console.log(pedido);
     }
   });
@@ -58,7 +53,6 @@ tamanho.forEach((_, i) => {
 guarnicao.forEach((_, i) => {
   guarnicao[i].addEventListener("change", (e) => {
     if (e.target.checked) {
-      //removeChecked(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`));
       pedido["guarnicoes"] = dados["guarnicoes"][e.target.value];
       console.log(pedido);
     }
@@ -68,9 +62,34 @@ guarnicao.forEach((_, i) => {
 mistura.forEach((_, i) => {
   mistura[i].addEventListener("change", (e) => {
     if (e.target.checked) {
-      //removeChecked(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`));
-      pedido["misturas"] = dados["misturas"][e.target.value];
-      console.log(pedido);
+      if (pedido.tamanhos.tipo === "Pratinho P") {
+        swal("Somente irá ser adicionado a ultima selecao marcada");
+        pedido["misturas"] = [dados["misturas"][e.target.value]];
+      }
+      if (pedido.tamanhos.tipo === "Pratinho M") {
+        swal(
+          "pode adicionar até duas misturas e somente irá ser adicionado as duas ultima selecoes marcada"
+        );
+        //pedido["misturas"] = dados["misturas"][e.target.value];
+        mistura.forEach((_, j) => {
+          mistura[j].addEventListener("change", (l) => {
+            if (l !== e) {
+              pedido["misturas"] = [
+                dados["misturas"][e.target.value],
+                dados["misturas"][l.target.value],
+              ];
+            }
+          });
+        });
+      }
+      if (pedido.tamanhos.tipo === "Pratinho G") {
+        swal("pode adicionar até três misturas");
+        pedido["misturas"] = [
+          dados["misturas"][mistura.length - 1],
+          dados["misturas"][mistura.length - 2],
+          dados["misturas"][mistura.length - 3],
+        ];
+      }
     }
   });
 });
@@ -78,7 +97,6 @@ mistura.forEach((_, i) => {
 opcional.forEach((_, i) => {
   opcional[i].addEventListener("change", (e) => {
     if (e.target.checked) {
-      //removeChecked(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`));
       pedido["opcionais"] = dados["opcionais"][e.target.value];
       console.log(pedido);
     }
@@ -88,7 +106,6 @@ opcional.forEach((_, i) => {
 bebida.forEach((_, i) => {
   bebida[i].addEventListener("change", (e) => {
     if (e.target.checked) {
-      //removeChecked(getCheckBoxArray(`.${e.target.parentNode.classList[1]}`));
       pedido["bebidas"] = dados["bebidas"][e.target.value];
       console.log(pedido);
     }
@@ -96,22 +113,42 @@ bebida.forEach((_, i) => {
 });
 
 btnPedidos.onclick = () => {
-  if (pedido.opcionais) {
-    op = `Opcional Selecionado: ${pedido.opcionais.tipo}`;
+  if (pedido.tamanhos) {
+    ta = `Tamanho Selecionado: ${pedido.tamanhos.tipo}`;
+    let mist = [];
+    pedido.misturas.forEach((m) => {
+      mist.push(m.tipo);
+      console.log(mist);
+      return mist;
+    });
+    if (pedido.guarnicoes) {
+      gu = `Guarnição Selecionado: ${pedido.guarnicoes.tipo}`;
+    } else {
+      alert("Selecione uma Guarnicao");
+    }
+    if (pedido.opcionais) {
+      op = `Opcional Selecionado: ${pedido.opcionais.tipo}`;
+    } else {
+      op = `Opcional Selecionado: Nenhum `;
+    }
+    if (pedido.bebidas) {
+      beb = `Bebida Selecionada: ${pedido.bebidas.tipo}`;
+    } else {
+      beb = `Bebida Selecionado: Nenhum `;
+    }
+    let escreva = `
+    ${ta}
+    ${gu}
+    Mistura Selecionada: ${mist}
+    ${op}
+    ${beb}
+    Valor Total: R$${pedido.tamanhos.preco},00`;
+    return swal(escreva).then(() => {
+      location.href = "./cadastro.html";
+    });
   } else {
-    op = `Opcional Selecionado: Nenhum `;
+    swal("Precisa seleciona o tamanho do prato").then(() => {
+      location.href = "./pedido.html";
+    });
   }
-  if (pedido.bebidas) {
-    beb = `Bebida Selecionada: ${pedido.bebidas.tipo}`;
-  } else {
-    beb = `Bebida Selecionado: Nenhum `;
-  }
-  let escreva = `
-  Tamanho Selecionado: ${pedido.tamanhos.tipo}
-  Guarnição Selecionado: ${pedido.guarnicoes.tipo}
-  Mistura Selecionada: ${pedido.misturas.tipo}
-  ${op}
-  ${beb}`;
-  return swal(escreva)
-}
-
+};
