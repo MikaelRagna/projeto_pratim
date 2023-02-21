@@ -293,6 +293,28 @@ input#img-5:checked~.nav-dots label#img-dot-5 {
   background-color: #79ff44;
 }
 
+.modal {
+  width: auto;
+  height: auto;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  
+  display: flex;
+  align-items: center;
+  background: #fff;
+  color: #000;
+  border-radius: 1rem;
+  justify-content: center;
+  transition: all 0.4s;
+}
+ 
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+
 .rodape {
   display: flex;
   justify-content: space-between;

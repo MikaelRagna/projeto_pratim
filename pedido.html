@@ -109,7 +109,7 @@
             <label for="tamanhoM">Pratinho M - R$ 12,00</label>
           </li>
           <li class="compra__item tamanhos">
-            <input type="checkbox" class="selecionando tamanho" id="tamanhoG" value=2 >
+            <input type="checkbox" class="selecionando tamanho" id="tamanhoG" value=2>
             <label for="tamanhoG">Pratinho G - R$ 15,00</label>
           </li>
         </ul>
@@ -158,15 +158,15 @@
         <ul class="compra__lista">
           <div class="compra__cabecalho">Opcionais</div>
           <li class="compra__item opcionais">
-            <input type="checkbox" class="selecionando opcioanl" id="salada" value=0>
+            <input type="checkbox" class="selecionando opcional" id="salada" value=0>
             <label for="salada">Salada</label>
           </li>
           <li class="compra__item opcionais">
-            <input type="checkbox" class="selecionando opcioanl" id="paçoca" value=1>
+            <input type="checkbox" class="selecionando opcional" id="paçoca" value=1>
             <label for="paçoca">Paçoca</label>
           </li>
           <li class="compra__item opcionais">
-            <input type="checkbox" class="selecionando opcioanl" id="vinagrete" value=2>
+            <input type="checkbox" class="selecionando opcional" id="vinagrete" value=2>
             <label for="vinagrete">Vinagrete</label>
           </li>
         </ul>
@@ -194,10 +194,24 @@
         </ul>
       </form>
     </section>
-    <div id="resultado" style="color: black; display: flex; flex-direction: column; text-align: center;font-weight: 700;"></div>
+
+    <!-- <div id="demo-modal" class="modal">
+        <div class="modal__content">
+          
+          <p id="pedido">
+          </p>
+       
+          <div class="modal__footer">
+            <a href="#" class="modal__footer-btn-close"> Fechar </a>
+          </div>
+       
+          <a href="#" class="modal__close">&times;</a>
+        </div>
+      </div> -->
     <section class="finalizar">
       <button id="finalizar__botao">Finalizar compra</button>
     </section>
+    <script src="./modalPersonalizado.js"></script>
   </main>
 
   <footer class="rodape">
